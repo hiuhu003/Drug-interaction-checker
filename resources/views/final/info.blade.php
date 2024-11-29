@@ -266,6 +266,7 @@
       doc.setFont("helvetica", "bold");
       doc.text("Recommendation:", marginLeft, yPos);
       yPos += 10;
+      
       doc.setFont("helvetica", "normal");
       let recommendationLines = doc.splitTextToSize(recommendation, maxWidth);
       checkPageBreak(recommendationLines.length * 10);

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediMatch</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <nav id="desktop-nav"> 
+        <div class="logo"> MediMatch</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#Services">Services</a></li>
+                <li><a href="#Contact"> Contact</a></li>
+                <li><a href="#Review"> Review</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="hamburger-nav">
+        <div class="logo">MediMatch</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="#About" onclick="toggleMenu()">About</a></li>
+                <li><a href="#Services" onclick="toggleMenu()">Services</a></li>
+                <li><a href="#Contact" onclick="toggleMenu()">Contact</a></li>
+                <li><a href="#Review" onclick="toggleMenu()"> Review</a></li>
+            </div>
+        </div>
+    </nav>
+    <div class="background">
+        <div class="content">
+            <h1>AI-Driven Drug Interaction Checker:<br> A Web-Based Solution for Safe Medication Management</h1>
+            <p>Safeguarding your health, one interaction at a time.</p>
+
+             <a href="" class="button">Learn More</a>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <section id="About" class="about-card">
+        <h1 class="title">About</h1>
+        <p class="section__text">
+            MediMatch is an innovative website designed to prioritize your health and safety by helping you understand potential interactions between medications. 
+            As a user, you simply input the names of two medications, and the platform's AI-driven system quickly scans an extensive medical database to analyze their compatibility.
+            This feature ensures that you’re informed about whether the medications can be taken together or if there are any potential negative side effects.
+            MediMatch provides detailed explanations, offering peace of mind and helping you make safer decisions about your health.
+            This tool is ideal for anyone managing multiple prescriptions or simply looking to be more informed about their medication choices.
+        </p>
+    </section>
+
+    <section id="Services" class="about-card">
+        <h1 class="title">Services</h1>
+            <div class="service-card">
+                <h3>Medication Compatibility Check</h3>
+                <p class="service-description">
+                    Users can input two or more medications to check for compatibility and potential interactions. This service helps you avoid harmful drug combinations...
+                    <span class="ellipsis" onclick="toggleMore(this)">...</span>
+                    <span class="more-text"> and make informed decisions about your medication usage.</span>
+                </p>
+            </div>
+            <div class="service-card"></div>
+                <h3>Dosage Adjustment Guidance</h3>
+                <p class="service-description">
+                    Receive guidance on appropriate dosage adjustments to avoid complications. Our AI assesses individual health conditions and previous medication history to recommend safe and effective dosages.
+                    <span class="ellipsis" onclick="toggleMore(this)">...</span>
+                    <span class="more-text">Correct dosage is critical for ensuring medication efficacy and minimizing the risk of adverse effects. Our recommendations help you optimize your treatment plan.</span>
+                </p>
+            </div>
+            <div class="service-card"></div>
+                <h3>Side Effect Analysis</h3>
+                <p class="service-description">
+                    Receive detailed information on potential side effects when taking certain medications together, helping you make informed choices about your health. Our advanced AI algorithms analyze drug interactions to identify any adverse effects that may occur when medications are combined. This is particularly crucial for individuals taking multiple prescriptions, as the risk of side effects can increase significantly.
+                    <span class="ellipsis" onclick="toggleMore(this)">...</span>
+                    <span class="more-text"> Understanding these interactions can empower you to manage your medication regimen effectively, reducing the risk of unexpected health complications. You can also access user reviews and clinical studies that highlight real-world experiences with various drug combinations.</span>
+                </p>
+            </div>
+    </section>
+    <section id="Review" class="about-card">
+        <section id="reviews">
+            <h2>User Reviews</h2>
+            <div class="review-container">
+                <div class="review-card active">
+                    <h3>John Doe</h3>
+                    <p class="review-text">"MediMatch has completely changed the way I manage my medications. The compatibility checks are incredibly helpful!"</p>
+                    <p class="review-rating">⭐⭐⭐⭐⭐</p>
+                </div>
+                <div class="review-card">
+                    <h3>Jane Smith</h3>
+                    <p class="review-text">"I love the personalized recommendations. It made it easy for me to understand which medications to take!"</p>
+                    <p class="review-rating">⭐⭐⭐⭐</p>
+                </div>
+                <div class="review-card">
+                    <h3>Emily Johnson</h3>
+                    <p class="review-text">"The side effect analysis feature is a lifesaver. I feel more confident about my treatment plan!"</p>
+                    <p class="review-rating">⭐⭐⭐⭐⭐</p>
+                </div>
+                <div class="review-card">
+                    <h3>Michael Brown</h3>
+                    <p class="review-text">"Great service! The alerts for drug interactions help me avoid dangerous combinations." </p>
+                    <p class="review-rating">⭐⭐⭐⭐⭐</p>
+                </div>
+            </div>
+        </section>
+    </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    const reviewCards = document.querySelectorAll('.review-card');
+    let currentIndex = 0; // Start from the first review
+
+    function showNextReview() {
+        // Hide the current review
+        reviewCards[currentIndex].classList.remove('active');
+
+        // Update the index to the next review
+        currentIndex = (currentIndex + 1) % reviewCards.length; // Loop back to the start
+
+        // Show the next review
+        reviewCards[currentIndex].classList.add('active');
+    }
+
+    // Show the first review immediately
+    reviewCards[currentIndex].classList.add('active');
+
+    // Set interval to change reviews every 3 seconds
+    setInterval(showNextReview, 3000); // Change review every 3 seconds
+        });
+    </script>
+</body>
+</html>
